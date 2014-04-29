@@ -1,0 +1,38 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <!-- URL -->
+        
+        <p>
+            <!-- Las variables enviadas en la URL son cogidas mediante el método
+            get (visible), y se mostrarán en la barra de navegación.-->
+            <a href="destino.php?nombre=Pepe">Este es el enlace a Pepe</a></br>
+            <a href="destino.php?nombre=Juan">Este es el enlace a Juan</a></br>
+            <a href="destino.php?nombre=Pedro">Este es el enlace a Pedro</a></br>
+        </p>
+        
+        <!-- FORMULARIO -->
+        
+        <!-- Con post se envían de forma oculta y transparente para el usuario,
+        esta vez desde un formulario donde se pone explicitamente el método.-->
+        <form action="muestra.php" method="post">
+            <input type="test" name="domicilio"/>
+            <input type="submit" value="Enviar"/>   
+        </form>
+        
+        <!-- Igual que el anterior pero con el método get -->
+        <form action="muestra2.php" method="get">
+            <input type="test" name="domicilio"/>
+            <input type="submit" value="Enviar"/>   
+        </form>
+        
+    </body>
+</html>
