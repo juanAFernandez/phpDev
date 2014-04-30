@@ -1,23 +1,27 @@
+<html>
+<body>
+
+<header>
+	<title>App para comentarios</title>
+
+</header>
+
+<head>Cabecera</head></br>
+
 <?php
-include ('conexion_db.php');
+include 'conexion_db.php';
+include 'funcionalidad.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors','1');
 
-    
-    $conexion=  mysql_connect($db_host,$db_user,$db_password);
 
-    
-    if(!$conexion){
-        die ("No se pudo conectar a la base de datos: </br>".mysql_error());
-    };
+conectarBase($db_host,$db_user,$db_password,$db_database);
 
-    $db_select=mysql_select_db($db_database);
-    	if(!$db_select){
-       	 die ("No se pudo seleccionar la base de datos: ".mysql_error());
-    	}
+mostrarComentarios();
 
 
+/*
     $consulta="SELECT * FROM comentarios";
     $resultado = mysql_query($consulta);
     
@@ -30,20 +34,13 @@ ini_set('display_errors','1');
         echo "Comentario: ".$result_row[0]."</br>";
     }
    
-    mysql_close($conexion);
-
-
-
-
-
+    mysql_close($conexion);*/
 /*
 Si encontramos algun error al llamar a mysql_connect puede ser
 porque en /etc/php5/apache2/php.ini esté comentada la linea 
  extension=msql.so , descomentándola y reiniciando apache con
  service apache2 restart por ejemplo todo debería funcionar.
-
-
 */
-
-
 ?>
+</body>
+</html>
